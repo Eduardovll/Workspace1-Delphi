@@ -1,0 +1,42 @@
+[TreeView]
+Ultima Tela=SM SUPER COMPRAS
+[FrmByteCortez]
+Pasta Textos=D:\_CONVERSAO\CORTEZ\BRAUNA\TXT
+Banco=D:\_CONVERSAO\CORTEZ\BRAUNA\BEMPRESA.FDB
+BD=1
+Data Inicial=01/01/2019
+Data Final=31/01/2019
+[FrmMyCommercePredileto]
+BDOraSchema=predileto_l2
+BDOraInst=root
+Pasta Textos=D:\_CONVERSAO\PREDILETO\TXT
+[FrmHiperLojao]
+Banco=D:\CONVERSAO\HiperLojao\Dados\GUARANI.FDB
+BD=1
+Pasta Textos=D:\CONVERSAO\HiperLojao\TXT
+[FrmSmDourado]
+Pasta Textos=D:\CONVERSAO\SM DOURADO\TXT
+BDOraSchema=SM DOURADO 
+BDOraInst=gilberto.fortunato
+[FrmJardimLago]
+Banco=D:\CONVERSAO\JARDIM DO LAGO 2020\BANCO\JLAGO.FDB
+BD=1
+Pasta Textos=D:\CONVERSAO\JARDIM DO LAGO 2020\TXT
+Data Inicial=01/01/2018
+Data Final=31/01/2018
+[FrmSmPegorin]
+Pasta Textos=D:\CONVERSAO\SM PEGORIN\TXT
+BDOraSchema=SMPEGORIN
+[FrmCampoGrande]
+Pasta Textos=C:\Users\gilberto.fortunato\Desktop\Conversao_BENE\TXT
+Banco=C:\Users\gilberto.fortunato\Desktop\Conversao_BENE\DADOS - Copia.GDB
+BD=1
+[FrmSmVia]
+Pasta Textos=D:\CONVERSAO\SM VIA\TXT
+BDOraSchema=SMVIA
+BDOraSenha=aaa123456@
+BDOraInst=postgres
+[FrmSmSuperComprasGestor]
+Banco=D:\CONVERSAO\SM SUPER COMPRAS - PRIMAVERA\TEMPSAD_GESTOR_10_03_2022_02_00_loja1.FDB
+BD=1
+Pasta Textos=D:\CONVERSAO\SM SUPER COMPRAS - PRIMAVERA\TXT

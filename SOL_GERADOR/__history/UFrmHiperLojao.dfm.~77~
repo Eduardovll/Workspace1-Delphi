@@ -1,0 +1,399 @@
+inherited FrmHiperLojao: TFrmHiperLojao
+  Caption = 'SUPERMERCADO HIPER LOJAO'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited LblVesao: TLabel
+    Visible = False
+  end
+  inherited ImgLogo: TImage
+    Left = 624
+    Height = 63
+    Anchors = [akTop, akRight]
+    ExplicitLeft = 624
+    ExplicitHeight = 63
+  end
+  object lblLoja: TLabel [2]
+    Left = 528
+    Top = 27
+    Width = 20
+    Height = 13
+    Caption = 'Loja'
+  end
+  inherited PctArquivos: TPageControl
+    Top = 15
+    ActivePage = AbaFiscal
+    ExplicitTop = 15
+    inherited AbaParceiros: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 257
+      ExplicitHeight = 297
+      inherited CkbCondPagForn: TCheckBox
+        Top = 28
+        ExplicitTop = 28
+      end
+      inherited CkbDivisaoForn: TCheckBox
+        Top = 56
+        Enabled = False
+        ExplicitTop = 56
+      end
+      inherited CkbTransportadora: TCheckBox
+        Top = 131
+        ExplicitTop = 131
+      end
+      inherited CkbStatusPdv: TCheckBox
+        Top = 262
+        Visible = False
+        ExplicitTop = 262
+      end
+      inherited CkbCliente: TCheckBox
+        Top = 82
+        ExplicitTop = 82
+      end
+      inherited CkbCondPagCli: TCheckBox
+        Top = 105
+        ExplicitTop = 105
+      end
+      inherited CkbEnderecoCliente: TCheckBox
+        Top = 239
+        Visible = False
+        ExplicitTop = 239
+      end
+    end
+    inherited AbaProdutos: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 257
+      ExplicitHeight = 297
+      object Label11: TLabel [0]
+        Left = 95
+        Top = 86
+        Width = 23
+        Height = 13
+        Caption = '< ---'
+      end
+      object Label12: TLabel [1]
+        Left = 119
+        Top = 161
+        Width = 23
+        Height = 13
+        Caption = '< ---'
+      end
+      object Label13: TLabel [2]
+        Left = 159
+        Top = 184
+        Width = 23
+        Height = 13
+        Caption = '< ---'
+      end
+      object Label14: TLabel [3]
+        Left = 175
+        Top = 192
+        Width = 4
+        Height = 13
+        Caption = '|'
+      end
+      object Label15: TLabel [4]
+        Left = 84
+        Top = 147
+        Width = 4
+        Height = 13
+        Caption = '|'
+      end
+      object Label16: TLabel [5]
+        Left = 173
+        Top = 227
+        Width = 4
+        Height = 13
+        Caption = '|'
+      end
+      inherited CkbProdSimilar: TCheckBox
+        Enabled = False
+      end
+      inherited CkbProduto: TCheckBox
+        OnClick = CkbProdutoClick
+      end
+      inherited CkbProdLoja: TCheckBox
+        OnClick = CkbProdLojaClick
+      end
+      inherited CkbProdForn: TCheckBox
+        OnClick = CkbProdFornClick
+      end
+      inherited CkbComposicao: TCheckBox
+        Enabled = False
+      end
+      inherited CkbReceitas: TCheckBox
+        Enabled = False
+      end
+      inherited CkbInfoNutricionais: TCheckBox
+        Enabled = False
+      end
+      inherited CkbProdComprador: TCheckBox
+        Top = 281
+        Enabled = False
+        ExplicitTop = 281
+      end
+      inherited CkbDecomposicao: TCheckBox
+        Enabled = False
+      end
+      inherited CkbProdLocalizacao: TCheckBox
+        Enabled = False
+      end
+      inherited CkbProdProducao: TCheckBox
+        Top = 240
+        Caption = 'Produ'#231#227'o'
+        Enabled = False
+        ExplicitTop = 240
+      end
+      inherited CkbCest: TCheckBox
+        Enabled = False
+      end
+      object btnScriptDeposito: TButton
+        Left = 159
+        Top = 67
+        Width = 95
+        Height = 28
+        Caption = 'Script Est. Dep'
+        Enabled = False
+        TabOrder = 15
+        OnClick = btnScriptDepositoClick
+      end
+      object btnCustoCheio: TButton
+        Left = 159
+        Top = 101
+        Width = 95
+        Height = 28
+        Caption = 'Script Cust. Cheio'
+        Enabled = False
+        TabOrder = 16
+        OnClick = btnCustoCheioClick
+      end
+      object btnAtualizaEstoque: TButton
+        Left = 159
+        Top = 155
+        Width = 95
+        Height = 28
+        Caption = 'Script At. Estoque'
+        Enabled = False
+        TabOrder = 17
+        OnClick = btnAtualizaEstoqueClick
+      end
+      object btnEstoqueTroca: TButton
+        Left = 159
+        Top = 203
+        Width = 95
+        Height = 28
+        Caption = 'Script Est. Troca'
+        Enabled = False
+        TabOrder = 18
+        OnClick = btnEstoqueTrocaClick
+      end
+      object btnFidelidade: TButton
+        Left = 64
+        Top = 122
+        Width = 89
+        Height = 27
+        Caption = 'Per. Fidelidade'
+        Enabled = False
+        TabOrder = 19
+        OnClick = btnFidelidadeClick
+      end
+      object btnFornPrefe: TButton
+        Left = 159
+        Top = 242
+        Width = 95
+        Height = 28
+        Caption = 'Forn. Preferencial'
+        Enabled = False
+        TabOrder = 20
+        OnClick = btnFornPrefeClick
+      end
+    end
+    inherited AbaFiscal: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 257
+      ExplicitHeight = 297
+      inherited CkbOutrasNFs: TCheckBox
+        Enabled = False
+      end
+      inherited CkbNFTransf: TCheckBox
+        Enabled = False
+      end
+      inherited CkbNFClientes: TCheckBox
+        Enabled = False
+      end
+      inherited CkbTributacao: TCheckBox
+        Enabled = False
+      end
+      inherited CkbNf: TCheckBox
+        Enabled = False
+      end
+    end
+    inherited Financeiro: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 257
+      ExplicitHeight = 297
+      inherited CkbFinanceiro: TCheckBox
+        Enabled = False
+      end
+      inherited CkbFinanceiroPagar: TCheckBox
+        Enabled = False
+      end
+      inherited CkbFinanceiroReceber: TCheckBox
+        Enabled = False
+      end
+      inherited CkbFinanceiroReceberCartoes: TCheckBox
+        Enabled = False
+      end
+      inherited CkbFinanceiroReceberBoleto: TCheckBox
+        Enabled = False
+      end
+      inherited CkbFinanceiroReceberCheque: TCheckBox
+        Enabled = False
+      end
+    end
+    inherited AbaOutros: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 257
+      ExplicitHeight = 297
+      inherited CkbMapaResumo: TCheckBox
+        Enabled = False
+      end
+      inherited CkbAjuste: TCheckBox
+        Enabled = False
+      end
+      inherited CkbPlContas: TCheckBox
+        Enabled = False
+      end
+    end
+  end
+  inherited GroupBox: TGroupBox
+    Top = 74
+    Height = 266
+    ExplicitTop = 74
+    ExplicitHeight = 266
+    inherited GrpCamBancoSoliduss: TGroupBox
+      Visible = False
+    end
+    inherited PCBancoDados: TPageControl
+      Left = 8
+      Width = 465
+      Height = 81
+      Visible = False
+      ExplicitLeft = 8
+      ExplicitWidth = 465
+      ExplicitHeight = 81
+      inherited TabOracle: TTabSheet
+        Enabled = False
+        ExplicitLeft = 4
+        ExplicitTop = 6
+        ExplicitWidth = 457
+        ExplicitHeight = 71
+        inherited Label5: TLabel
+          Left = 9
+          Top = 47
+          Width = 36
+          Caption = 'Usuario'
+          ExplicitLeft = 9
+          ExplicitTop = 47
+          ExplicitWidth = 36
+        end
+        inherited Label4: TLabel
+          Left = 209
+          Top = 47
+          ExplicitLeft = 209
+          ExplicitTop = 47
+        end
+        inherited Label1: TLabel
+          Left = 199
+          Width = 37
+          Caption = 'Schema'
+          ExplicitLeft = 199
+          ExplicitWidth = 37
+        end
+        inherited Label6: TLabel
+          Left = 36
+          Width = 10
+          Caption = 'IP'
+          Visible = False
+          ExplicitLeft = 36
+          ExplicitWidth = 10
+        end
+        inherited edtSchema: TEdit
+          Left = 48
+          Top = 43
+          ExplicitLeft = 48
+          ExplicitTop = 43
+        end
+        inherited edtSenhaOracle: TEdit
+          Left = 249
+          Top = 45
+          Width = 190
+          PasswordChar = '*'
+          ExplicitLeft = 249
+          ExplicitTop = 45
+          ExplicitWidth = 190
+        end
+        inherited edtInst: TEdit
+          Left = 249
+          Width = 189
+          ExplicitLeft = 249
+          ExplicitWidth = 189
+        end
+        inherited edtIpOra: TEdit
+          Left = 48
+          Top = 3
+          Visible = False
+          ExplicitLeft = 48
+          ExplicitTop = 3
+        end
+      end
+      inherited TabMySql: TTabSheet
+        ExplicitLeft = 4
+        ExplicitTop = 6
+        ExplicitWidth = 457
+        ExplicitHeight = 71
+      end
+      inherited TabSqlServer: TTabSheet
+        ExplicitLeft = 4
+        ExplicitTop = 6
+        ExplicitWidth = 457
+        ExplicitHeight = 71
+      end
+    end
+  end
+  inherited GbxData: TGroupBox
+    Left = 280
+    Top = 10
+    ExplicitLeft = 280
+    ExplicitTop = 10
+  end
+  inherited ckbGrade: TCheckBox
+    Visible = False
+  end
+  inherited CkbFormatado: TCheckBox
+    Visible = False
+  end
+  inherited rdgExtensao: TRadioGroup
+    Visible = False
+  end
+  object CbxLoja: TComboBox [11]
+    Left = 554
+    Top = 24
+    Width = 39
+    Height = 21
+    TabOrder = 8
+    Text = '1'
+    Items.Strings = (
+      '1'
+      '3'
+      '6')
+  end
+  inherited MainMenu1: TMainMenu
+    Left = 784
+    Top = 352
+  end
+end

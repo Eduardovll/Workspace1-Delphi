@@ -1,0 +1,57 @@
+program Gerador;
+
+uses
+  Vcl.Forms,
+  UClasses in 'UClasses.pas',
+  UUtilidades in 'UUtilidades.pas',
+  UProgresso in 'UProgresso.pas' {FrmProgresso},
+  UFrmModelo in 'UFrmModelo.pas' {FrmModeloSis},
+  xProc in 'xProc.pas',
+  UMenuPrincipal in 'UMenuPrincipal.pas' {frmMenuPrincipal},
+  UFrmSetParceiro in 'UFrmSetParceiro.pas',
+  UFrmSetProdutos in 'UFrmSetProdutos.pas',
+  UFrmSetFiscal in 'UFrmSetFiscal.pas',
+  UFrmSetOutros in 'UFrmSetOutros.pas',
+  UFrmAriusNagai in 'UFrmAriusNagai.pas' {FrmAriusNagai},
+  UFrmGetWayMama in 'UFrmGetWayMama.pas' {FrmGetWayMama},
+  UFrmByteCortez in 'UFrmByteCortez.pas' {FrmByteCortez},
+  UFrmMyCommercePredileto in 'UFrmMyCommercePredileto.pas' {FrmMyCommercePredileto},
+  UFrmHiperLojao in 'UFrmHiperLojao.pas' {FrmHiperLojao},
+  UFrmAlhoSupermercados in 'UFrmAlhoSupermercados.pas' {FrmAlhoSupermercados},
+  UFrmPortal in 'UFrmPortal.pas' {FrmPortal},
+  UFrmSmDourado in 'UFrmSmDourado.pas' {FrmSmDourado},
+  UFrmJardimLago in 'UFrmJardimLago.pas' {FrmJardimLago},
+  UFrmSmPegorin in 'UFrmSmPegorin.pas' {FrmSmPegorin},
+  UFrmSmAnaMara in 'UFrmSmAnaMara.pas' {FrmSmAnaMara},
+  UFrmMerkoFruit in 'UFrmMerkoFruit.pas' {FrmMerkoFruit},
+  UFrmCampoGrande in 'UFrmCampoGrande.pas' {FrmCampoGrande},
+  UFrmSmNovaOpcao in 'UFrmSmNovaOpcao.pas' {FrmSmNovaOpcao},
+  UFrmSmMultimarketing in 'UFrmSmMultimarketing.pas' {FrmSmMultimarketing},
+  UFrmSmSaoFrancisco in 'UFrmSmSaoFrancisco.pas' {FrmSmSaoFrancisco},
+  UFrmSmRioBranco in 'UFrmSmRioBranco.pas' {FrmSmRioBranco},
+  UFrmSmRecantoDoPao in 'UFrmSmRecantoDoPao.pas' {FrmSmRecantoDoPao},
+  UFrmSmBonfim in 'UFrmSmBonfim.pas' {FrmSmBonfim},
+  UFrmSmPanda in 'UFrmSmPanda.pas' {FrmSmPanda},
+  UFrmSmLaticinioMello in 'UFrmSmLaticinioMello.pas' {FrmSmLaticinioMello},
+  UFrmAriusTrio in 'UFrmAriusTrio.pas' {FrmAriusTrio},
+  UFrmSmKuzzi in 'UFrmSmKuzzi.pas' {FrmSmKuzzi},
+  UFrmSmRonyMG in 'UFrmSmRonyMG.pas' {FrmSmRonyMG},
+  UFrmSmVia in 'UFrmSmVia.pas' {FrmSmVia},
+  UFrmSmParaiso in 'UFrmSmParaiso.pas' {FrmSmParaiso},
+  UFrmSmSuperComprasGestor in 'UFrmSmSuperComprasGestor.pas' {FrmSmSuperComprasGestor},
+  UFrmSmNossoPao in 'UFrmSmNossoPao.pas' {FrmSmNossoPao},
+  UFrmSmDucido in 'UFrmSmDucido.pas' {FrmSmDucido},
+  UFrmSmZeuGrupoSuperMais in 'UFrmSmZeuGrupoSuperMais.pas' {FrmSmZeuGrupoSuperMais},
+  UFrmSmDaTerraFacilete in 'UFrmSmDaTerraFacilete.pas' {FrmSmDaTerraFacilete};
+
+//  UFrmCissPoderPires in 'UFrmCissPoderPires.pas' {FrmSysPoderPires};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.Title := 'Gerador de texto para i-Solidus';
+  Application.CreateForm(TfrmMenuPrincipal, frmMenuPrincipal);
+  Application.Run;
+end.

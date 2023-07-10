@@ -1,0 +1,109 @@
+[TreeView]
+Ultima Tela=SM SUPER COMPRAS
+[FrmMyCommercePredileto]
+BDOraSchema=casabarros
+BDOraInst=root
+Pasta Textos=D:\CONVERSAO\Predileto\TXT
+BDOraSenha=123
+[FrmHiperLojao]
+Banco=D:\CONVERSAO\HiperLojao\Dados\GUARANI.FDB
+BD=1
+Pasta Textos=D:\CONVERSAO\HiperLojao\TXT
+Data Inicial=9/1/2018
+Data Final=8/31/2019
+[FrmPortal]
+BDOraSchema=PORTAL
+BDOraInst=gilberto.fortunato
+Pasta Textos=D:\CONVERSAO\PORTAL\TXT
+[FrmSmDourado]
+BDOraSchema=SM DOURADO 
+BDOraInst=gilberto.fortunato
+Pasta Textos=D:\CONVERSAO\SM DOURADO\TXT
+Data Inicial=29/09/2018
+Data Final=29/09/2018
+[]
+Pasta Textos=D:\CONVERSAO\SM DOURADO\TXT
+BDOraInst=gilberto.fortunato
+BDOraSchema=SM DOURADO  
+[FrmJardimLago]
+Banco=D:\CONVERSAO\JARDIM DO LAGO 2020\BANCO\JLAGO.FDB
+BD=1
+Pasta Textos=D:\CONVERSAO\JARDIM DO LAGO 2020\TXT
+Data Inicial=01/01/2018
+Data Final=31/12/2018
+[FrmSmPegorin]
+BDOraSchema=SMPEGORIN 
+Pasta Textos=D:\CONVERSAO\SM PEGORIN\TXT
+Data Inicial=01/01/2019
+Data Final=01/02/2019
+[FrmMerkoFruit]
+Pasta Textos=D:\CONVERSAO\MERKO_2\TXT
+Banco=D:\CONVERSAO\MERKO_2\MERKO2.FDB
+BD=1
+[FrmCampoGrande]
+Banco=D:\CONVERSAO\SM BENE\DADOS - Copia.GDB
+BD=1
+Pasta Textos=D:\CONVERSAO\SM BENE\TXT
+Data Inicial=1/5/2020
+Data Final=9/18/2020
+[FrmSmMultimarketing]
+BDOraSchema=MULTIMARKETING
+Pasta Textos=D:\CONVERSAO\SM MULTIMARKETING\TXT
+BDOraInst=sa
+BDOraSenha=aaa123456@
+Data Inicial=8/1/2019
+Data Final=10/31/2020
+[FrmSmRioBranco]
+Banco=D:\CONVERSAO\SM RIO BRANCO\BANCO\JUNIOR.FDB
+BD=1
+Pasta Textos=D:\CONVERSAO\SM RIO BRANCO\TXT
+Data Inicial=1/1/2015
+Data Final=2/28/2015
+[FrmSmRecantoDoPao]
+Banco=D:\CONVERSAO\SM RECANTO DO PAO\BANCO\SMD.FDB
+BD=1
+Pasta Textos=D:\CONVERSAO\SM RECANTO DO PAO\TXT
+[FrmSmBonfim]
+Banco=D:\CONVERSAO\MERCADO BONFIM\BANCO\BCOSUP_OLD.FDB
+BD=1
+Pasta Textos=D:\CONVERSAO\MERCADO BONFIM\TXT
+[FrmSmPanda]
+Banco=D:\CONVERSAO\SM PANDA\BANCO\CPLUS.FDB
+BD=1
+Pasta Textos=D:\CONVERSAO\SM PANDA\TXT
+Data Inicial=1/1/2020
+Data Final=2/29/2020
+[FrmSmKuzzi]
+BDOraInst=SUPORTE_EXT
+BDOraSchema=CONVERSAO_NOVAOPCAO
+BDOraSenha=1nt3rs0l1d
+Pasta Textos=D:\CONVERSAO\SM KUZZI\TXT
+[FrmSmLaticinioMello]
+Banco=D:\CONVERSAO\LATICINIO MELLO\BANCO\DADOS.FDB
+BD=1
+Pasta Textos=D:\CONVERSAO\LATICINIO MELLO\TXT
+[FrmSmVia]
+Pasta Textos=D:\CONVERSAO\SM VIA\TXT
+BDOraSchema=CONVERSAO_SMVIA
+BDOraInst=postgres
+BDOraSenha=aaa123456@
+Data Inicial=8/1/2020
+Data Final=8/31/2020
+[FrmSmParaiso]
+Banco=D:\CONVERSAO\SM PARAISO\LOJA3-MATRIZ\DADOS.FDB
+BD=1
+Pasta Textos=D:\CONVERSAO\SM PARAISO\TXT
+Data Inicial=3/1/2021
+Data Final=9/3/2021
+[FrmSmLaranjeiras]
+Pasta Textos=D:\CONVERSAO\SM LARANJEIRAS\TXT
+Banco=D:\CONVERSAO\SM LARANJEIRAS\CLIPP.FDB
+BD=1
+Data Inicial=1/1/2021
+Data Final=1/1/2022
+[FrmSmSuperComprasGestor]
+Banco=D:\CONVERSAO\SM SUPER COMPRAS - PRIMAVERA\TEMPSAD_GESTOR_10_03_2022_02_00_loja1.FDB
+Pasta Textos=D:\CONVERSAO\SM SUPER COMPRAS - PRIMAVERA\TXT
+BD=1
+Data Inicial=10/1/2021
+Data Final=10/3/2021

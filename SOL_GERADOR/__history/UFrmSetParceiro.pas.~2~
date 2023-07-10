@@ -1,0 +1,248 @@
+unit UFrmSetParceiro;
+
+interface
+
+ uses UClasses;
+
+type
+  TParceiro = class
+public
+  Function GetFieldFornecedor :TLayout;
+  Function GetFieldDivisaoFornecedor :TLayout;
+  Function GetFieldCondFornecedor :TLayout;
+  Function GetFieldTransportadora :TLayout;
+  Function GetFieldStatusClientePDV :TLayout;
+  Function GetFieldClientes :TLayout;
+  Function GetFieldEndCobCliente :TLayout;
+  Function GetFieldPagamentoCliente :TLayout;
+end;
+
+var Layout :TLayout;
+
+implementation
+{ TParceiro }
+
+uses UFrmModelo;
+
+Function TParceiro.GetFieldClientes :TLayout ;
+begin
+  Layout  := TLayout.Create('Clientes','CLIENTES');
+  with Layout do
+  begin
+    AddField('COD_CLIENTE',10 ,'0',tpLeft, ftpInteger );
+    AddField('DES_CLIENTE',50 ,' ', tpRight, ftpString );
+    AddField('NUM_CGC',19,' ', tpRight, ftpString );
+    AddField('NUM_INSC_EST',18,' ' ,tpRight, ftpString );
+    AddField('DES_ENDERECO',50,' ',tpRight, ftpString );
+    AddField('DES_BAIRRO',25,' ' ,tpRight, ftpString );
+    AddField('DES_CIDADE',25,' ',tpRight, ftpString );
+    AddField('DES_SIGLA',2,' ' ,tpRight, ftpString );
+    AddField('NUM_CEP',9,' ' ,tpRight, ftpString );
+    AddField('NUM_FONE',15,' ' ,tpLeft, ftpString );
+    AddField('NUM_FAX',15,' ' ,tpLeft, ftpString );
+    AddField('DES_CONTATO',35,' ',tpRight, ftpString );
+    AddField('FLG_SEXO',1,'0',tpLeft, ftpInteger );
+    AddField('VAL_LIMITE_CRETID',12,'0',tpLeft, ftpFloat,'0.00' );
+    AddField('VAL_LIMITE_CONV',12,'0',tpLeft, ftpFloat,'0.00' );
+    AddField('VAL_DEBITO',12,'0',tpLeft, ftpFloat,'0.00' );
+    AddField('VAL_RENDA',12,'0',tpLeft, ftpFloat,'0.00' );
+    AddField('COD_CONVENIO',8,'0',tpLeft, ftpInteger );
+    AddField('COD_STATUS_PDV',2,'0',tpLeft, ftpInteger );
+    AddField('FLG_EMPRESA',1,' ',tpRight, ftpString );
+    AddField('FLG_CONVENIO',1,' ',tpRight, ftpString );
+    AddField('MICRO_EMPRESA',1,' ',tpRight, ftpString );
+    AddField('DTA_CADASTRO',10,' ',tpRight, ftpDatetime,'dd/mm/yyyy' );
+    AddField('NUM_ENDERECO',8,' ',tpRight, ftpString );
+    AddField('NUM_RG',18,' ',tpRight, ftpString );
+    AddField('FLG_EST_CIVIL',1,' ',tpLeft, ftpString );
+    AddField('NUM_CELULAR', 15,' ',tpLeft, ftpString );
+    AddField('DTA_ALTERACAO',10,' ',tpRight, ftpDateTime,'dd/mm/yyyy' );
+    AddField('DES_OBSERVACAO',290,' ',tpRight, ftpString );
+    AddField('DES_COMPLEMENTO', 25,' ',tpRight, ftpString );
+    AddField('DES_EMAIL',50,' ',tpRight, ftpString );
+    AddField('DES_FANTASIA',35,' ',tpRight, ftpString );
+    AddField('DTA_NASCIMENTO',10,' ',tpRight, ftpDateTime, 'dd/mm/yyyy' );
+    AddField('DES_PAI',40,' ',tpRight, ftpString );
+    AddField('DES_MAE',40,' ',tpRight, ftpString );
+    AddField('DES_CONJUGE',40,' ',tpRight, ftpString );
+    AddField('NUM_CPF_CONJUGE',19,' ',tpLeft, ftpString );
+    AddField('VAL_DEB_CONV',12,' ',tpLeft, ftpFloat,'0.00' );
+    AddField('INATIVO', 1,' ',tpRight, ftpString );
+    AddField('DES_MATRICULA', 25,' ',tpRight, ftpString );
+    AddField('NUM_CGC_ASSOCIADO', 1,' ',tpLeft, ftpString );
+    AddField('FLG_PROD_RURAL', 1,' ',tpLeft, ftpString );
+    AddField('COD_STATUS_PDV_CONV', 2,' ',tpLeft, ftpInteger );
+    AddField('FLG_ENVIA_CODIGO', 1,' ',tpRight, ftpString );
+    AddField('DTA_NASC_CONJUGE', 10,' ',tpRight, ftpDateTime,'dd/mm/yyyy' );
+    AddField('COD_CLASSIF', 10,' ',tpLeft, ftpInteger );
+  end;
+  Result := Layout;
+end;
+
+Function TParceiro.GetFieldCondFornecedor :TLayout ;
+begin
+ with Layout do
+ begin
+  Layout := TLayout.Create('Condição Pagamento Fornecedor','CONDICAO_FORNECEDOR');
+  AddField('COD_FORNECEDOR',10,'0',tpLeft,ftpInteger);
+  AddField('NUM_CONDICAO',10,'0',tpLeft,ftpInteger);
+  AddField('COD_CONDICAO',10,'0',tpLeft,ftpInteger);
+  AddField('COD_ENTIDADE',10,'0',tpLeft,ftpInteger);
+  AddField('NUM_CGC',19,' ',tpRight,ftpString);
+ end;
+ Result := Layout;
+end;
+
+Function TParceiro.GetFieldDivisaoFornecedor :TLayout ;
+begin
+ with Layout do
+ begin
+    Layout := TLayout.Create('Divisão Fornecedor','DIVISAO_FORNECEDOR');
+    AddField('COD_FORNECEDOR',10,'0',tpLeft,ftpInteger);
+    AddField('COD_DIVISAO',10,'0',tpLeft,ftpInteger);
+    AddField('DES_DIVISAO',50,' ',tpRight,FtpString);
+    AddField('DES_ENDERECO',50,' ',tpRight,FtpString);
+    AddField('DES_BAIRRO',25,' ',tpRight,FtpString);
+    AddField('NUM_CEP',9,' ' ,tpRight, ftpString );
+    AddField('DES_CIDADE',25,' ',tpRight,FtpString);
+    AddField('DES_SIGLA',2,' ',tpRight,FtpString);
+    AddField('NUM_FONE',15,' ',tpRight,FtpString);
+    AddField('DES_CONTATO',35,' ',tpRight,FtpString);
+    AddField('DES_EMAIL',50,' ',tpRight,FtpString);
+    AddField('DES_OBSERVACAO',400,' ',tpRight,FtpString);
+ end;
+ Result := Layout;
+end;
+
+Function TParceiro.GetFieldEndCobCliente :TLayout ;
+begin
+ with Layout do
+ begin
+    Layout := TLayout.Create('Endereço Cobrança Cliente','CLIENTE_COBRANCA');
+    AddField('COD_CLIENTE',10,'0',tpLeft,FtpInteger);
+    AddField('DES_ENDERECO',50,' ',tpRight,FtpString);
+    AddField('NUM_ENDERECO',8,'0',tpLeft,FtpString);
+    AddField('TIPO_ENDERECO',1,'0',tpLeft,FtpInteger);
+    AddField('DES_BAIRRO',25,' ',tpRight,FtpString);
+    AddField('ESPACOBRANCO',10,' ',tpRight,FtpString);
+    AddField('NUM_CEP',9,'0',tpLeft,FtpString);
+    AddField('DES_SIGLA',2,' ',tpRight,FtpString);
+    AddField('DES_COMPLEMENTO',25,' ',tpRight,FtpString);
+    AddField('NUM_CNPJ',19,'0',tpRight,FtpString);
+    AddField('NUM_INSC_EST',18,' ',tpRight,FtpString);
+    AddField('DES_CIDADE',50,' ',tpRight,FtpString);
+ end;
+ Result := Layout;
+end;
+
+Function TParceiro.GetFieldFornecedor :TLayout ;
+begin
+ with Layout do
+ begin
+  Layout := TLayout.Create('Fornecedores','FORNECEDOR');
+    AddField('COD_FORNECEDOR',10,'0',tpLeft,ftpInteger);
+    AddField('DES_FORNECEDOR',50,' ',tpRight,FtpString);
+    AddField('DES_FANTASIA',35,' ',tpRight,FtpString);
+    AddField('NUM_CGC',19,' ',tpRight,FtpString);
+    AddField('NUM_INSC_EST',18,' ',tpRight,FtpString);
+    AddField('DES_ENDERECO',50,' ',tpRight,FtpString);
+    AddField('DES_BAIRRO',25,' ',tpRight,FtpString);
+    AddField('DES_CIDADE',25,' ',tpRight,FtpString);
+    AddField('DES_SIGLA',2,' ',tpRight,FtpString);
+    AddField('NUM_CEP',9,' ',tpRight,FtpString);
+    AddField('NUM_FONE',15,' ',tpLeft,FtpString);
+    AddField('NUM_FAX',15,' ',tpLeft,FtpString);
+    AddField('DES_CONTATO',35,' ',tpRight,FtpString);
+    AddField('QTD_DIA_CARENCIA',3,'0',tpLeft,FtpFloat);
+    AddField('NUM_FREQ_VISITA',3,'0',tpLeft,ftpInteger);
+    AddField('VAL_DESCONTO',12,'0',tpLeft,ftpFloat,'0.00');
+    AddField('NUM_PRAZO',3,'0',tpLeft,ftpInteger);
+    AddField('ACEITA_DEVOL_MER',1,' ',tpRight,FtpString);
+    AddField('CAL_IPI_VAL_BRUTO',1,' ',tpRight,FtpString);
+    AddField('CAL_ICMS_ENC_FIN',1,' ',tpRight,FtpString);
+    AddField('CAL_ICMS_VAL_IPI',1,' ',tpRight,FtpString);
+    AddField('MICRO_EMPRESA',1,' ',tpRight,FtpString);
+    AddField('COD_FORNECEDOR_ANT',10,'0',tpLeft,FtpString);
+    AddField('NUM_ENDERECO',8,' ',tpRight,FtpString);
+    AddField('DES_OBSERVACAO',400,' ',tpRight,FtpString);
+    AddField('DES_EMAIL',50,' ',tpRight,FtpString);
+    AddField('DES_WEB_SITE',50,' ',tpRight,FtpString);
+    AddField('FABRICANTE',1,' ',tpRight,FtpString);
+    AddField('FLG_PRODUTOR_RURAL',1,' ',tpRight,FtpString);
+    AddField('TIPO_FRETE',1,'0',tpLeft,FtpInteger);
+    AddField('FLG_SIMPLES',1,' ',tpRight,FtpString);
+    AddField('FLG_SUBSTITUTO_TRIB',1,' ',tpRight,FtpString);
+    AddField('COD_CONTACCFORN',25,' ',tpRight,FtpString);
+    AddField('INATIVO',1,' ',tpRight,FtpString);
+    AddField('COD_CLASSIF',10,'0',tpLeft,FtpInteger);
+    AddField('DTA_CADASTRO',10,' ',tpRight,ftpDateTime);
+    AddField('VAL_CREDITO',12,'0',tpLeft,FtpFloat, '0.00');
+    AddField('VAL_DEBITO',12,'0',tpLeft,FtpFloat, '0.00');
+    AddField('PED_MIN_VAL',12,'0',tpLeft,ftpFloat,'0.00');
+    AddField('DES_EMAIL_VEND',60,' ',tpRight,FtpString);
+    AddField('SENHA_COTACAO',8,' ',tpRight,FtpString);
+    AddField('TIPO_PRODUTOR',1,' ',tpRight,FtpString);
+    AddField('NUM_CELULAR',15,' ',tpLeft,FtpString);
+
+ end;
+ Result := Layout;
+end;
+
+Function TParceiro.GetFieldPagamentoCliente :TLayout ;
+begin
+ with Layout do
+ begin
+  Layout     := TLayout.Create('Condição Pagamento Cliente','CONDICAO_CLIENTE');
+  AddField('COD_CLIENTE',10,'0',tpLeft,FtpInteger);
+  AddField('NUM_CONDICAO',10,'0',tpLeft,FtpInteger);
+  AddField('COD_CONDICAO',10,'0',tpLeft,FtpInteger);
+  AddField('COD_ENTIDADE',10,'0',tpLeft,FtpInteger);
+ end;
+ Result := Layout;
+end;
+
+Function TParceiro.GetFieldStatusClientePDV :TLayout ;
+begin
+ with Layout do
+ begin
+  Layout   := TLayout.Create('Status PDV','STATUS_PDV');
+  AddField('COD_STATUS_PDV',10,'0',tpLeft,FtpInteger);
+  AddField('DES_STATUS_PDV',50,' ',tpLeft,FtpString);
+  AddField('STATUS_PDV',13,' ',tpRight,FtpString);
+  AddField('TIPO_CONDICAO',1,'0',tpLeft,FtpInteger);
+  AddField('NEGATIVAR',1,' ',tpLeft,FtpString);
+  AddField('FLG_TIPO',1,'0',tpLeft,FtpInteger);
+ end;
+ Result := Layout;
+end;
+
+Function TParceiro.GetFieldTransportadora :TLayout ;
+begin
+ with Layout do
+ begin
+    Layout := TLayout.Create('Transportadoras','TRANSPORTADORA');
+    AddField('COD_TRANSPORTADORA',10,'0',tpLeft,FtpInteger);
+    AddField('DES_TRANSPORTADORA',50,' ',tpRight,FtpString);
+    AddField('NUM_CGC',19,' ',tpLeft,FtpString);
+    AddField('NUM_INSC_EST',18,' ',tpRight,FtpString);
+    AddField('DES_ENDERECO',50,' ',tpRight,FtpString);
+    AddField('DES_BAIRRO',25,' ',tpRight,FtpString);
+    AddField('DES_CIDADE',25,' ',tpRight,FtpString);
+    AddField('DES_SIGLA',2,' ',tpRight,FtpString);
+    AddField('NUM_CEP',9,' ',tpRight,FtpString);
+    AddField('NUM_FONE',15,' ',tpRight,FtpString);
+    AddField('NUM_FAX',15,' ',tpRight,FtpString);
+    AddField('DES_CONTATO',35,' ',tpRight,FtpString);
+    AddField('COD_CONDICAO',3,'0',tpLeft,FtpInteger);
+    AddField('NUM_CONDICAO',3,'0',tpLeft,FtpInteger);
+    AddField('NUM_ENDERECO',8,' ',tpRight,ftpString);
+    AddField('DES_OBSERVACAO',200,' ',tpRight,FtpString);
+    AddField('COD_ENTIDADE', 10, ' ',tpRight,FtpString);
+    AddField('DES_EMAIL',50,' ',tpRight,FtpString);
+    AddField('DES_WEB_SITE',50,' ',tpRight,FtpString);
+ end;
+ Result := Layout;
+end;
+
+end.
+

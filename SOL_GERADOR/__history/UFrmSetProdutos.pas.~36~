@@ -1,0 +1,380 @@
+unit UFrmSetProdutos;
+
+interface
+
+  uses UClasses;
+
+type
+  TProdutos = class
+public
+  Function GetFieldSecao : TLayout;
+  Function GetFieldGrupo : TLayout;
+  Function GetFieldSubGrupo : TLayout;
+
+  Function GetFieldProdutosSimilares : TLayout;
+  Function GetFieldProdutos : TLayout;
+  Function GetFieldCodigoBarra : TLayout;
+
+  Function GetFieldNCM : TLayout;
+  Function GetFieldNCMUF : TLayout;
+  Function GetFieldCest : TLayout;
+
+  Function GetFieldProdutoLoja : TLayout;
+  Function GetFieldProdutoFornedores : TLayout;
+  Function GetFieldComposicoesProdutos : TLayout;
+  Function GetFieldDecomposicoesProdutos : TLayout;
+  Function GetFieldReceitas : TLayout;
+  Function GetFieldInfoNutricionais : TLayout;
+  Function GetFieldProdutoComprador : TLayout;
+  Function GetFieldProdutoLocalizacao : TLayout;
+  Function GetFieldProducao : TLayout;
+end;
+
+ var Layout : TLayout;
+
+implementation
+
+{ TProdutos }
+
+Function TProdutos.GetFieldCodigoBarra : TLayout;
+begin
+ with Layout do
+ begin
+  Layout := TLayout.Create('Código de Barras','CODIGO_BARRA');
+  AddField('COD_PRODUTO',8 ,'0',tpLeft, ftpString );
+  AddField('COD_EAN',14 ,'0',tpLeft, ftpString );
+ end;
+ Result := Layout;
+end;
+
+Function TProdutos.GetFieldComposicoesProdutos : TLayout;
+begin
+ with Layout do
+ begin
+  Layout  := TLayout.Create('Composição Produto','COMPOSICAO');
+  AddField('COD_PRODUTO',13 ,'0',tpLeft, ftpInteger );
+  AddField('COD_PRODUTO_COMP',13 ,'0',tpLeft, ftpInteger );
+  AddField('QTD_PRODUTO',10 ,' ',tpLeft, ftpFloat, '0.000' );
+  AddField('VAL_VENDA',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('PER_RATEIO',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('VAL_DIF',10 ,'0',tpLeft, ftpFloat, '0.00' );
+ end;
+ Result := Layout;
+end;
+
+Function TProdutos.GetFieldDecomposicoesProdutos : TLayout;
+begin
+ with Layout do
+ begin
+  Layout := TLayout.Create('DecomPosição Produto','DECOMPOSICAO');
+  AddField('COD_PRODUTO',13 ,'0',tpLeft, ftpInteger );
+  AddField('COD_PRODUTO_DECOM',13 ,'0',tpLeft, ftpInteger );
+  AddField('QTD_DECOMP',10 ,'0',tpLeft, ftpFloat, '0.000' );
+  AddField('DES_UNIDADE',3 ,' ',tpRight, ftpString );
+
+
+ end;
+ Result := Layout;
+end;
+
+Function TProdutos.GetFieldGrupo : TLayout;
+begin
+ with Layout do
+ begin
+  Layout := TLayout.Create('Grupo','GRUPO');
+  AddField('COD_SECAO',10 ,'0',tpLeft, ftpString );
+  AddField('COD_GRUPO',10 ,'0',tpLeft, ftpInteger );
+  AddField('DES_GRUPO',50 ,' ',tpRight, ftpString );
+  AddField('VAL_META',5 ,' ',tpLeft, ftpFloat, '0.00' );
+ end;
+ Result := Layout;
+end;
+
+Function TProdutos.GetFieldInfoNutricionais : TLayout;
+begin
+ with Layout do
+ begin
+  Layout := TLayout.Create('Informações Nutricionais','INFO_NUTRICIONAL');
+  AddField('COD_INFO_NUTRICIONAL',10 ,'0',tpLeft, ftpInteger );
+  AddField('DES_INFO_NUTRICIONAL',25 ,' ',tpRight, ftpString );
+  AddField('PORCAO',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('VALOR_CALORICO',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('CARBOIDRATO',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('PROTEINA',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('GORDURA_TOTAL',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('GORDURA_SATURADA',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('COLESTEROL',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('FIBRA_ALIMENTAR',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('CALCIO',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('FERRO',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('SODIO',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('VD_VALOR_CALORICO',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('VD_CARBOIDRATO',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('VD_PROTEINA',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('VD_GORDURA_TOTAL',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('VD_GORDURA_SATURADA',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('VD_COLESTEROL',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('VD_FIBRA_ALIMENTAR',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('VD_CALCIO',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('VD_FERRO',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('VD_SODIO',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('GORDURA_TRANS',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('VD_GORDURA_TRANS',10 ,'0',tpLeft, ftpFloat, '0.00' );
+  AddField('UNIDADE_PORCAO',3 ,' ',tpRight, ftpString );
+  AddField('DES_PORCAO',25 ,' ',tpRight, ftpString );
+  AddField('PARTE_INTEIRA_MED_CASEIRA',10 ,'0',tpLeft, ftpInteger );
+  AddField('MED_CASEIRA_UTILIZADA',2 ,' ',tpRight, ftpString );
+ end;
+ Result := Layout;
+end;
+
+Function TProdutos.GetFieldNCM : TLayout;
+begin
+ with Layout do
+ begin
+  Layout := TLayout.Create('NCM','NCM');
+  AddField('COD_NCM',10 ,'0',tpLeft, ftpString );
+  AddField('DES_NCM',50 ,' ',tpRight, ftpString );
+  AddField('NUM_NCM',8 ,'0',tpLeft, ftpString );
+  AddField('FLG_NAO_PIS_COFINS',1 ,' ',tpRight, ftpString );
+  AddField('TIPO_NAO_PIS_COFINS',2 ,' ',tpLeft, ftpString );
+  AddField('COD_TAB_SPED',3 ,'0',tpLeft, ftpString );
+  AddField('NUM_CEST',7 , '0',tpLeft, ftpString );
+  //AddField('COD_BENEF_FISCAL',10 , '0',tpLeft, ftpString );
+ end;
+ Result := Layout;
+end;
+
+Function TProdutos.GetFieldNCMUF : TLayout;
+begin
+ with Layout do
+ begin
+  Layout := TLayout.Create('NCM UF','NCM_UF');
+  AddField('COD_NCM',10 ,'0',tpLeft, ftpString );
+  AddField('DES_SIGLA',2 ,' ',tpRight, ftpString );
+  AddField('COD_TRIB_ENTRADA',4 ,'0',tpLeft, ftpInteger );
+  AddField('COD_TRIB_SAIDA',4 ,'0',tpLeft, ftpInteger );
+  AddField('PER_IVA',10 ,'0',tpLeft, ftpFloat,'0.00' );
+  AddField('PER_FCP_ST',10 ,'0',tpLeft, ftpFloat,'0.00' );
+//HABILITAR O CAMPO BENEFICIO FISCAL SOMENTE PARA OS CLIENTE QUE PRECISAM
+  AddField('COD_BENEFICIO_FISCAL',10 , '0',tpLeft, ftpString );
+  AddField('COD_BENEFICIO_FISCAL_ENT',10 , '0',tpLeft, ftpString );
+ end;
+  Result := Layout;
+end;
+
+Function TProdutos.GetFieldCest : TLayout;
+begin
+ with Layout do
+ begin
+  Layout := TLayout.Create('CEST','CEST');
+  AddField('COD_CEST',10 , '0',tpLeft, ftpString );
+  AddField('NUM_CEST',7 , '0',tpLeft, ftpString );
+  AddField('DES_CEST',100 , ' ',tpRight, ftpString );
+ end;
+  Result := Layout;
+end;
+
+Function TProdutos.GetFieldProducao: TLayout;
+begin
+ with Layout do
+ begin
+   Layout := TLayout.Create('Produto Produção', 'PRODUCAO');
+   AddField('COD_PRODUTO',8 ,'0',tpLeft, ftpString );
+   AddField('COD_PRODUTO_PRODUCAO',8 ,'0',tpLeft, ftpString );
+   AddField('QTD_PRODUCAO',10 ,'0',tpLeft, ftpFloat, '0.000' );
+   AddField('DES_UNIDADE',3 ,' ',tpRight, ftpString );
+   AddField('QTD_RECEITA',10 ,'0',tpLeft, ftpFloat, '0.000' );
+   AddField('QTD_RENDIMENTO',10 ,'0',tpLeft, ftpFloat, '0.000' );
+ end;
+  Result := Layout;
+end;
+
+Function TProdutos.GetFieldProdutoComprador : TLayout;
+begin
+ with Layout do
+ begin
+   Layout := TLayout.Create('Produtos Comprador','PRODUTO_COMPRADOR');
+   AddField('COD_COMPRADOR',10 ,'0',tpLeft, ftpInteger );
+   AddField('COD_PRODUTO',8 ,'0',tpLeft, ftpInteger );
+   AddField('COD_LOJA',10 ,'0',tpLeft, ftpInteger );
+   AddField('DTA_ALTERACAO',10 ,' ',tpRight, ftpDateTime,'dd/mm/yyyy' );
+ end;
+ Result := Layout;
+end;
+
+Function TProdutos.GetFieldProdutoFornedores : TLayout;
+begin
+ with Layout do
+ begin
+  Layout := TLayout.Create('Produtos Fornecedor','PRODUTO_FORNECEDOR');
+  AddField('COD_PRODUTO',8 ,'0',tpLeft, ftpString );
+  AddField('COD_FORNECEDOR',10 ,'0',tpLeft, ftpInteger );
+  AddField('DES_REFERENCIA',35 ,' ',tpRight, ftpString );
+  AddField('NUM_CGC',19 ,'0',tpLeft, ftpString );
+  AddField('COD_DIVISAO',10 ,'0',tpLeft, ftpInteger );
+  AddField('DES_UNIDADE_COMPRA',3 ,' ',tpLeft, ftpString );
+  AddField('QTD_EMBALAGEM_COMPRA',10 ,'0',tpLeft, ftpFloat, '0.000' );
+  AddField('QTD_TROCA',10 ,'0',tpLeft, ftpFloat, '0.000' );
+  AddField('FLG_PREFERENCIAL',1 ,' ',tpLeft, ftpString );
+ end;
+ Result := Layout;
+end;
+
+Function TProdutos.GetFieldProdutoLocalizacao : TLayout;
+begin
+   with Layout do
+   begin
+    Layout := TLayout.Create('Localização Produtos','LOCALIZACAO');
+    AddField('COD_CLASSIF',10 ,'0',tpLeft, ftpInteger );
+    AddField('DES_CLASSIF',50 ,' ',tpRight, ftpString );
+    AddField('TIPO_CLASSIF',1 ,'0',tpLeft, ftpInteger );
+   end;
+   Result := Layout;
+end;
+
+Function TProdutos.GetFieldProdutoLoja : TLayout;
+begin
+   with Layout do
+   begin
+     Layout := TLayout.Create('Produto Loja','PRODUTO_LOJA');
+     AddField('COD_PRODUTO',8 ,'0',tpLeft, ftpString );
+     AddField('VAL_CUSTO_REP',12 ,'0',tpLeft, ftpFloat, '0.00' );
+     AddField('VAL_VENDA',12 ,'0',tpLeft, ftpFloat, '0.00' );
+     AddField('VAL_OFERTA',12 ,'0',tpLeft, ftpFloat, '0.00' );
+     AddField('QTD_EST_VDA',10 ,'0',tpLeft, ftpFloat, '0.00' );
+     AddField('TECLA_BALANCA',5 ,' ',tpLeft, ftpString );
+     AddField('COD_TRIBUTACAO',3 ,'0',tpLeft, ftpString );
+     AddField('VAL_MARGEM',5 ,'0',tpLeft, ftpFloat, '0.00' );
+     AddField('QTD_ETIQUETA',4 ,'0',tpLeft, ftpInteger, '0' );
+     AddField('COD_TRIB_ENTRADA',10 ,'0',tpLeft, ftpString );
+     AddField('FLG_INATIVO',1 ,'0',tpRight, ftpString );
+     AddField('COD_PRODUTO_ANT',13 ,'0',tpLeft, ftpString );
+     AddField('NUM_NCM',10 ,'0',tpLeft, ftpString );
+     AddField('TIPO_NCM',1 ,'0',tpLeft, ftpInteger );
+     AddField('VAL_VENDA_2',12 ,'0',tpLeft, ftpFloat, '0.00' );
+     AddField('DTA_VALIDA_OFERTA',10 ,' ',tpRight, ftpDateTime, 'dd/mm/yyyy' );
+     AddField('QTD_EST_MINIMO',10 ,'0',tpLeft, ftpFloat, '0.00' );
+     AddField('COD_VASILHAME',10 ,' ',tpLeft, ftpString );
+     AddField('FORA_LINHA',1 ,' ',tpRight, ftpString );
+     AddField('QTD_PRECO_DIF',12 ,'0',tpLeft, ftpFloat, '0.00' );
+     AddField('VAL_FORCA_VDA',12 ,'0',tpLeft, ftpFloat, '0.00' );
+     AddField('NUM_CEST',7 , '0',tpLeft, ftpString );
+     AddField('PER_IVA',10 ,'0',tpLeft, ftpFloat,'0.00' );
+     AddField('PER_FCP_ST',10 ,'0',tpLeft, ftpFloat,'0.00' );
+     AddField('PER_FIDELIDADE',10 ,'0',tpLeft, ftpFloat,'0.00' );
+     AddField('COD_INFO_RECEITA',10 ,'0',tpLeft, ftpString );
+     AddField('COD_ASSOCIADO',8 ,' ',tpRight, ftpString );
+     //AddField('PER_PIS',10 ,'0',tpLeft, ftpFloat,'0.00' );
+     //AddField('COD_BENEF_FISCAL',10 ,'0',tpLeft, ftpString );
+   end;
+   Result := Layout;
+end;
+
+Function TProdutos.GetFieldProdutos : TLayout;
+begin
+   with Layout do
+   begin
+    Layout := TLayout.Create('Produtos','PRODUTO');
+    AddField('COD_PRODUTO',8 ,'0',tpLeft, ftpString );
+    AddField('COD_BARRA_PRINCIPAL',14 ,'0',tpLeft, ftpString );
+    AddField('DES_REDUZIDA',35 ,' ',tpRight, ftpString );
+    AddField('DES_PRODUTO',50 ,' ',tpRight, ftpString );
+    AddField('QTD_EMBALAGEM_COMPRA',10 ,'0',tpLeft, ftpFloat,'0.000' );
+    AddField('DES_UNIDADE_COMPRA',3 ,' ',tpRight, ftpString );
+    AddField('QTD_EMBALAGEM_VENDA',10 ,'0',tpLeft, ftpFloat,'0.000' );
+    AddField('DES_UNIDADE_VENDA',3 ,' ',tpRight, ftpString );
+    AddField('TIPO_IPI',1 ,'0',tpLeft, ftpInteger );
+    AddField('VAL_IPI',10 ,'0',tpLeft, ftpFloat,'0.00' );
+    AddField('COD_SECAO',10 ,'0',tpLeft, ftpString );
+    AddField('COD_GRUPO',10 ,'0',tpLeft, ftpInteger );
+    AddField('COD_SUB_GRUPO',10 ,'0',tpLeft, ftpString );
+    AddField('COD_PRODUTO_SIMILAR',10 ,'0',tpLeft, ftpInteger );
+    AddField('IPV',1 ,' ',tpRight, ftpString );
+    AddField('DIAS_VALIDADE',5 ,'0',tpLeft, ftpInteger );
+    AddField('TIPO_PRODUTO',1 ,'0',tpLeft, ftpInteger );
+    AddField('FLG_NAO_PIS_COFINS',1 ,' ',tpRight, ftpString );
+    AddField('FLG_ENVIA_BALANCA',1 ,' ',tpRight, ftpString );
+    AddField('TIPO_NAO_PIS_COFINS',2 ,'0',tpLeft, ftpInteger );
+    AddField('TIPO_EVENTO',1 ,'0',tpLeft, ftpInteger );
+    AddField('COD_ASSOCIADO',8 ,' ',tpRight, ftpString );
+    AddField('DES_OBSERVACAO',210 ,' ',tpRight, ftpString );
+    AddField('COD_INFO_NUTRICIONAL',10 ,'0',tpLeft, ftpInteger );
+//    AddField('COD_INFO_RECEITA',10 ,'0',tpLeft, ftpString );
+    AddField('COD_TAB_SPED',3 ,' ',tpRight, ftpString );
+    AddField('FLG_ALCOOLICO',1 ,' ',tpRight, ftpString );
+    AddField('TIPO_ESPECIE',1 ,'0',tpLeft, ftpInteger );
+    AddField('COD_CLASSIF',10 ,'0',tpLeft, ftpInteger );
+    AddField('VAL_VDA_PESO_BRUTO',12 ,'0',tpLeft, ftpFloat, '0.000' );
+    AddField('VAL_PESO_EMB',12 ,'0',tpLeft, ftpFloat, '0.000' );
+    AddField('TIPO_EXPLOSAO_COMPRA',1 ,'0',tpLeft, ftpInteger);
+    AddField('DTA_INI_OPER',10 ,' ',tpRight, ftpDateTime, 'dd/mm/yyyy' );
+    AddField('DES_PLAQUETA',25 ,' ',tpRight, ftpString );
+    AddField('MES_ANO_INI_DEPREC',6 ,' ',tpRight, ftpString );
+    AddField('TIPO_BEM',1 ,'0',tpLeft, ftpInteger );
+    AddField('COD_FORNECEDOR',10 ,'0',tpLeft, ftpInteger );
+    AddField('NUM_NF',10 ,'0',tpLeft, ftpInteger );
+    AddField('DTA_ENTRADA',10 ,' ',tpRight, ftpDateTime, 'dd/mm/yyyy' );
+    AddField('COD_NAT_BEM',1 ,'0',tpLeft, ftpInteger );
+    AddField('VAL_ORIG_BEM',12 ,'0',tpLeft, ftpFloat, '0.00' );
+    AddField('DES_PRODUTO_ANT',50 ,' ',tpRight, ftpString );
+   end;
+   Result := Layout;
+end;
+
+Function TProdutos.GetFieldProdutosSimilares : TLayout;
+begin
+   with Layout do
+   begin
+     Layout := TLayout.Create('Produtos Similares','PRODUTO_SIMILAR');
+     AddField('COD_PRODUTO_SIMILAR',8 ,'0',tpLeft, ftpInteger );
+     AddField('DES_PRODUTO_SIMILAR',50 ,' ',tpRight, ftpString );
+     AddField('VAL_META',5 ,'0',tpLeft, ftpFloat,'0.00' );
+   end;
+   Result := Layout;
+end;
+
+Function TProdutos.GetFieldReceitas : TLayout;
+begin
+   with Layout do
+   begin
+    Layout := TLayout.Create('Receitas','RECEITAS');
+    AddField('COD_INFO_RECEITA',10 ,'0',tpLeft, ftpInteger );
+    AddField('DES_INFO_RECEITA',25 ,' ',tpRight, ftpString );
+    AddField('DETALHAMENTO',700 , ' ',tpRight, ftpString);
+   end;
+   Result := Layout;
+end;
+
+Function TProdutos.GetFieldSecao : TLayout;
+begin
+   with Layout do
+   begin
+    Layout := TLayout.Create('Seção','SECAO');
+    AddField('COD_SECAO',10 ,'0',tpLeft, ftpString );
+    AddField('DES_SECAO',50 ,' ',tpRight, ftpString );
+    AddField('VAL_META',5 ,'0',tpLeft, ftpFloat,'0.00' );
+   end;
+   Result := Layout;
+end;
+
+Function TProdutos.GetFieldSubGrupo : TLayout;
+begin
+   with Layout do
+   begin
+     Layout := TLayout.Create('Sub-Grupo','SUBGRUPO');
+     AddField('COD_SECAO',10 ,'0',tpLeft, ftpString );
+     AddField('COD_GRUPO',10 ,'0',tpLeft, ftpString );
+     AddField('COD_SUB_GRUPO',10 ,'0',tpLeft, ftpString );
+     AddField('DES_SUB_GRUPO',50 ,' ',tpRight, ftpString );
+     AddField('VAL_META',5 ,'0',tpLeft, ftpFloat,'0.00' );
+     AddField('VAL_MARGEM_REF',5 ,'0',tpLeft, ftpFloat, '0.00' );
+     AddField('QTD_DIA_SEGURANCA',5 ,'0',tpLeft, ftpInteger );
+     AddField('FLG_ALCOOLICO',1 ,' ',tpLeft, ftpString );
+   end;
+   Result := Layout;
+end;
+
+
+
+end.

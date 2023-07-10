@@ -1,0 +1,149 @@
+object FrmProgresso: TFrmProgresso
+  Left = 1266
+  Top = 395
+  Caption = 'Gerando texto...'
+  ClientHeight = 325
+  ClientWidth = 592
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  FormStyle = fsMDIChild
+  GlassFrame.Enabled = True
+  Position = poDesigned
+  Visible = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnResize = FormResize
+  DesignSize = (
+    592
+    325)
+  TextHeight = 13
+  object LblQtdErros: TLabel
+    Left = 556
+    Top = 294
+    Width = 24
+    Height = 13
+    Alignment = taRightJustify
+    Anchors = [akRight, akBottom]
+    Caption = 'Erros'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    ExplicitLeft = 560
+  end
+  object LblRegistroAtual: TLabel
+    Left = 504
+    Top = 8
+    Width = 77
+    Height = 13
+    Alignment = taRightJustify
+    Anchors = [akTop, akRight]
+    Caption = 'LblRegistroAtual'
+    ExplicitLeft = 508
+  end
+  object LblAcaoAtual: TLabel
+    Left = 8
+    Top = 8
+    Width = 63
+    Height = 13
+    Caption = 'LblAcaoAtual'
+  end
+  object spdRestaurar: TSpeedButton
+    Left = 8
+    Top = 290
+    Width = 90
+    Height = 30
+    Anchors = [akLeft, akBottom]
+    Caption = 'Restaurar Janela'
+    Flat = True
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+    OnClick = spdRestaurarClick
+  end
+  object BtnCancelar: TButton
+    Left = 258
+    Top = 295
+    Width = 80
+    Height = 25
+    Hint = 'Clique para cancelar a gera'#231#227'o de texto'
+    Anchors = [akBottom]
+    Caption = 'Cancelar'
+    TabOrder = 0
+    OnClick = BtnCancelarClick
+    ExplicitLeft = 256
+    ExplicitTop = 294
+  end
+  object PgbGeracao: TProgressBar
+    Left = 8
+    Top = 24
+    Width = 573
+    Height = 29
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 1
+    ExplicitWidth = 569
+  end
+  object pgb: TPageControl
+    Left = 8
+    Top = 59
+    Width = 572
+    Height = 229
+    ActivePage = TabSheet1
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    TabOrder = 2
+    ExplicitWidth = 568
+    ExplicitHeight = 228
+    object TabSheet1: TTabSheet
+      Caption = 'Grade'
+      DesignSize = (
+        564
+        201)
+      object DBGrid1: TDBGrid
+        Left = -1
+        Top = -1
+        Width = 566
+        Height = 203
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        DataSource = DsTable
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+        TitleFont.Style = []
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Logs'
+      ImageIndex = 1
+      DesignSize = (
+        564
+        201)
+      object MemProgresso: TMemo
+        Left = 0
+        Top = 0
+        Width = 564
+        Height = 201
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        ReadOnly = True
+        TabOrder = 0
+        ExplicitWidth = 568
+        ExplicitHeight = 122
+      end
+    end
+  end
+  object DsTable: TDataSource
+    Left = 488
+    Top = 96
+  end
+end

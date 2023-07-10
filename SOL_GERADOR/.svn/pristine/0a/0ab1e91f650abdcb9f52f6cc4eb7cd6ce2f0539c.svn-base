@@ -1,0 +1,189 @@
+object frmMenuPrincipal: TfrmMenuPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Gerador Txt para I-Solidus'
+  ClientHeight = 451
+  ClientWidth = 745
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsMDIForm
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignSize = (
+    745
+    451)
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = 193
+    Top = 0
+    Width = 552
+    Height = 425
+    Align = alClient
+    Proportional = True
+    Transparent = True
+    ExplicitTop = -2
+  end
+  object TreeViewMenu: TTreeView
+    Left = 0
+    Top = 0
+    Width = 193
+    Height = 425
+    Align = alLeft
+    Color = clSilver
+    Indent = 19
+    ReadOnly = True
+    SortType = stText
+    TabOrder = 0
+    OnClick = TreeViewMenuClick
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 425
+    Width = 745
+    Height = 26
+    Color = clSilver
+    Panels = <>
+  end
+  object CkbAutomatico: TCheckBox
+    Left = 546
+    Top = 429
+    Width = 199
+    Height = 17
+    Anchors = [akRight, akBottom]
+    Caption = 'Abrir automaticamente a '#250'ltima tela ?'
+    Color = clSilver
+    ParentColor = False
+    TabOrder = 2
+    OnClick = CkbAutomaticoClick
+  end
+  object ActionList1: TActionList
+    Left = 209
+    Top = 24
+    object ActAriusNagai: TAction
+      Caption = 'NAGAI'
+      Enabled = False
+      OnExecute = ActAriusNagaiExecute
+    end
+    object ActGetwayMama: TAction
+      Caption = 'MAMA CONCHAS'
+      Enabled = False
+      OnExecute = ActGetwayMamaExecute
+    end
+    object ActByteCortez: TAction
+      Caption = 'CORTEZ'
+      Enabled = False
+      OnExecute = ActByteCortezExecute
+    end
+    object ActMyCommercePredileto: TAction
+      Caption = 'PREDILETO'
+      Enabled = False
+      OnExecute = ActMyCommercePrediletoExecute
+    end
+    object ActHiperLojao: TAction
+      Caption = 'HIPER LOJAO'
+      OnExecute = ActHiperLojaoExecute
+    end
+    object ActAlhoSup: TAction
+      Caption = 'ALIO SUPERMERCADO'
+      Enabled = False
+      OnExecute = ActAlhoSupExecute
+    end
+    object ActSmPortal: TAction
+      Caption = 'SM PORTAL'
+      Enabled = False
+      OnExecute = ActSmPortalExecute
+    end
+    object ActSmDourado: TAction
+      Caption = 'SM DOURADO'
+      OnExecute = ActSmDouradoExecute
+    end
+    object ActSmJardimLago: TAction
+      Caption = 'JARDIM LAGO'
+      OnExecute = ActSmJardimLagoExecute
+    end
+    object ActSmPegorin: TAction
+      Caption = 'SM PEGORIN'
+      OnExecute = ActSmPegorinExecute
+    end
+    object ActSmAnaMara: TAction
+      Caption = 'SM ANA MARA'
+      ShortCut = 16461
+      OnExecute = ActSmAnaMaraExecute
+    end
+    object ActSmMerkoFruit: TAction
+      Caption = 'SM MERKOFRUIT'
+      OnExecute = ActSmMerkoFruitExecute
+    end
+    object ActSmBene: TAction
+      Caption = 'SM BENE'
+      OnExecute = ActSmBeneExecute
+    end
+    object ActSmNovaOpcao: TAction
+      Caption = 'SM NOVA OPCAO'
+      OnExecute = ActSmNovaOpcaoExecute
+    end
+    object ActSmMultimarketing: TAction
+      Caption = 'SM MULTIMARKETING'
+      OnExecute = ActSmMultimarketingExecute
+    end
+    object ActSmSaoFrancisco: TAction
+      Caption = 'SM SAO FRANCISCO'
+      OnExecute = ActSmSaoFranciscoExecute
+    end
+    object ActSmRioBranco: TAction
+      Caption = 'SM RIO BRANCO'
+      OnExecute = ActSmRioBrancoExecute
+    end
+    object ActSmRecantoDoPao: TAction
+      Caption = 'SM RECANTO DO PAO'
+      OnExecute = ActSmRecantoDoPaoExecute
+    end
+    object ActSmBonfim: TAction
+      Caption = 'SM BONFIM'
+      OnExecute = ActSmBonfimExecute
+    end
+    object ActSmPanda: TAction
+      Caption = 'SM PANDA'
+      OnExecute = ActSmPandaExecute
+    end
+    object ActSmLaticinioMello: TAction
+      Caption = 'SM LATIC'#205'NIO MELLO'
+      OnExecute = ActSmLaticinioMelloExecute
+    end
+    object ActSmTrio: TAction
+      Caption = 'SM TRIO'
+      OnExecute = ActSmTrioExecute
+    end
+    object ActSmKuzzi: TAction
+      Caption = 'SM KUZZI'
+      OnExecute = ActSmKuzziExecute
+    end
+    object ActRonyMG: TAction
+      Caption = 'SM RONY MG'
+      OnExecute = ActRonyMGExecute
+    end
+    object ActSmVia: TAction
+      Caption = 'SM VIA'
+      OnExecute = ActSmViaExecute
+    end
+    object ActSmParaiso: TAction
+      Caption = 'SM PARAISO'
+      OnExecute = ActSmParaisoExecute
+    end
+    object ActSmLaranjeiras: TAction
+      Caption = 'SM LARANJEIRAS'
+      OnExecute = ActSmLaranjeirasExecute
+    end
+    object ActSmSuperComprasGestor: TAction
+      Caption = 'SM SUPER COMPRAS'
+      OnExecute = ActSmSuperComprasGestorExecute
+    end
+  end
+end
